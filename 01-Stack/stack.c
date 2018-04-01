@@ -85,7 +85,12 @@ STACK *const pop(STACK *const p, int &e) 	//出栈到e，并返回p
     return p;
 }
 
-STACK *const assign(STACK *const p, const STACK &s); //赋s给p指的栈,并返回p
+STACK *const assign(STACK *const p, const STACK &s) //赋s给p指的栈,并返回p
+{
+    // 先清除p所指的栈
+    p-> 
+    
+}
 
 void print(const STACK *const p)			//打印p指向的栈
 {

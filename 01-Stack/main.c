@@ -5,7 +5,7 @@
 int main()
 {
     STACK s, t; 
-    int e;
+    int e, i;
     
     // initSTACK（空栈初始化版本）
     printf("初始化空栈s，栈容量为5\n");
@@ -33,6 +33,13 @@ int main()
     printf("打印输出当前栈s\n");
     print(&s);
     NEWLINE;
+    
+    printf("获取元素\n");
+    for(int i=0; i<s.pos; i++)
+        printf("i=%d\t", getelem(&s, i));
+    NEWLINE;
+    NEWLINE;
+    
     
     printf("用栈 s 初始化栈 t\n");
     initSTACK(&t, s);
