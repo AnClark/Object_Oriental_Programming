@@ -81,6 +81,27 @@ int main()
     pop(&t, e);     printf("\t输出元素：%d\n", e);
     pop(&t, e);     printf("\t输出元素：%d\n", e);
     NEWLINE;
+    NEWLINE;
+    
+    printf("准备测试assign...\n");
+    
+    printf("3个元素入栈s\n");
+    push(&s, 1111);
+    push(&s, 2222);
+    push(&s, 3333);
+    printf("栈s的内容为："); print(&s);
+    
+    printf("3个元素入栈t\n");
+    push(&t, 9999);
+    push(&t, 8888);
+    push(&t, 7777);
+    printf("栈t的内容为："); print(&t);
+    
+    printf("assign s->t \n");
+	assign(&t, s);
+	printf("此时t的内容为："); print(&t);
+    NEWLINE;
+    NEWLINE;
     
     
     printf("销毁栈 s\n");
