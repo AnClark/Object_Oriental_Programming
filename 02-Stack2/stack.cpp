@@ -65,10 +65,10 @@ STACK &STACK::pop(int &e) 		//出栈到e,并返回栈
 
 STACK &STACK::assign(const STACK &s) //赋s给栈,并返回被赋值的栈
 {
-    delete elems;
     realloc(elems, s.size() * sizeof(int));
-    
-    // TODO: 待实现 
+     
+    for(int i=0; i<max; i++)
+        elems[i] = s.getelem(i);
     
     return *this;
 }

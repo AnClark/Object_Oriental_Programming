@@ -12,32 +12,32 @@ QUEUE::QUEUE(const QUEUE &s):elems(new int[s.max]), max(s.max) 			//сц╤сапs©╫╠╢Ё
     
 }
 
-virtual operator QUEUE::int ( ) const			//╥╣╩ь╤сап╣дй╣╪йт╙кь╦ЖйЩ
+operator QUEUE::int ( ) const			//╥╣╩ь╤сап╣дй╣╪йт╙кь╦ЖйЩ
 {
     
 }
 
-virtual QUEUE &operator QUEUE::<<(int e) 	//╫╚eхК╤сап,╡╒╥╣╩ь╤сап
+QUEUE &QUEUE::operator <<(int e) 	//╫╚eхК╤сап,╡╒╥╣╩ь╤сап
 {
     
 }
 
-virtual QUEUE &operator QUEUE::>>(int &e)	//ЁЖ╤сап╣╫e,╡╒╥╣╩ь╤сап
+QUEUE &QUEUE::operator >>(int &e)	//ЁЖ╤сап╣╫e,╡╒╥╣╩ь╤сап
 {
     
 }
 
-virtual QUEUE &operator QUEUE::=(const QUEUE &s) //╦Ёs╦Ь╤сап,╡╒╥╣╩ь╠╩╦Ёж╣╣д╤сап
+QUEUE &QUEUE::operator =(const QUEUE &s) //╦Ёs╦Ь╤сап,╡╒╥╣╩ь╠╩╦Ёж╣╣д╤сап
 {
     
 }
 
-virtual void QUEUE::print( ) const			//╢Рс║╤сап
+void QUEUE::print( ) const			//╢Рс║╤сап
 {
     
 }
 
-virtual QUEUE::~QUEUE( )					//оЗ╩ы╤сап
+QUEUE::~QUEUE( )					//оЗ╩ы╤сап
 {
     
 }

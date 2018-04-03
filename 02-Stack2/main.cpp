@@ -64,7 +64,9 @@ int main()
     s->push(8888);
     s->push(7777);
     cout<<"当前共有 "<<s->howMany()<<" 个元素，栈的容量为 "<<s->size()<<endl;
-    cout<<endl;
+    cout<<"此时的s为：";
+    s->print();
+    cout<<endl<<endl;
     
     cout<<"将s赋给t"<<endl;
     cout<<"赋值前的t：";
