@@ -102,7 +102,7 @@ int main()
     s->print();
     
     PRINT("开始赋值");
-    s = t;
+    *s = *t;
     
     PRINT("队列s赋值后的内容为：");
     s->print();

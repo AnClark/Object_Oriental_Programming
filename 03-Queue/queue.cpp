@@ -114,6 +114,6 @@ void QUEUE::print( ) const			//打印队列
 
 QUEUE::~QUEUE( )					//销毁队列
 {
-    //delete elems;
+    delete[] elems;
 }
 
