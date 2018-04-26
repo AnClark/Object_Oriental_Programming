@@ -13,7 +13,7 @@ QUEUE::QUEUE(const QUEUE &s):elems(new int[s.max]), max(s.max) 			//ÓÃ¶ÓÁĞs¿½±´³
     for(int i=0; i<max; i++)
         elems[i] = s.elems[i];
     
-    // ¿½±´¶ÓÊ×¶ÓÎ²
+    // ¿½±´¶ÓÊ×¶ÓÎ²Ö¸ÕëÖµ 
     head = s.head;
     tail = s.tail;
 }
@@ -66,35 +66,24 @@ QUEUE &QUEUE::operator >>(int &e)	//³ö¶ÓÁĞµ½e,²¢·µ»Ø¶ÓÁĞ
     
     return *this;
 }
-
+ 
 QUEUE &QUEUE::operator =(const QUEUE &s) //¸³s¸ø¶ÓÁĞ,²¢·µ»Ø±»¸³ÖµµÄ¶ÓÁĞ
 {
-    // ¸³ÖµºóµÄ¶ÓÁĞ½«´ÓÊı×éµÚÒ»Ïî¿ªÊ¼×éÖ¯
+    /** ËµÃ÷£º¸³ÖµºóµÄ¶ÓÁĞ½«´ÓÊı×éµÚÒ»Ïî¿ªÊ¼×éÖ¯ **/
+    int i,j;
     
-    // »ñÈ¡sµÄÊµ¼ÊÔªËØ¸öÊı£¬²¢×¼±¸±¸·İ±äÁ¿s_elems 
+    // »ñÈ¡sµÄÊµ¼ÊÔªËØ¸öÊı
     int s_size = (int) s;
-    int *s_elems = new int[s_size]; 
-     
     
-    // ½«sµÄËùÓĞÔªËØÒ»Ò»³ö¶Ó£¬±¸·İµ½±äÁ¿s_elemsÖĞ 
-    int i, num;
-    for(i=1; i<=s_size; i++)
+    // ±éÀús£¬ÌáÈ¡sÖĞµÄ¶ÓÁĞÔªËØ£¬¸³µ½µ±Ç°ÀàµÄelemsÖĞ
+    for(i=s.head, j=0; i!=s.tail && j<max-1; i=(i+1)%s.max, j++)
     {
-        s>>num;
-        s_elems[i] = num;
+        elems[j] = s.elems[i];
     }
     
-    // ½«s_elemsµÄÖµ¸³¸øelems
-    for(i=0; i<max && i<s_size; i++)
-        elems[i] = s_elems[i];
-    // ÉèÖÃheadÓëtail
-    head = 0; 
-    tail = i;
-    
-    // »¹Ô­s
-    for(i=0; i<s_size; i++)
-        s<<s_elems[i];
-    
+    // ÉèÖÃ¶ÓÊ×¶ÓÎ² 
+    head = 0;
+    tail = j;
     
     return *this;
 }

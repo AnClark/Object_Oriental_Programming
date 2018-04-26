@@ -77,7 +77,7 @@ int main()
 
     NEWSECTION;
    
-    PRINT("===== 新栈初始化测试 =====");
+    PRINT("===== 新队列初始化测试 =====");
     PRINT("----- 用现有队列s初始化新队列t -----");
     PRINT("队列s的内容为：");
     s->print();
@@ -88,7 +88,7 @@ int main()
 
     NEWSECTION;
     
-    PRINT("===== 队列赋值测试 =====");
+    PRINT("===== 队列赋值测试一 =====");
     PRINT("----- 将队列t赋给队列s -----");
     
     PRINT("清空t，并重新组织t的值");
@@ -106,12 +106,24 @@ int main()
     
     PRINT("队列s赋值后的内容为：");
     s->print();
+    
+    
+    NEWSECTION;
+    
+    PRINT("===== 队列赋值测试二 =====");
+    PRINT("----- 将队列t赋给新队列r，r的容量小于t -----");
+    
+    PRINT("初始化队列r并进行赋值");
+    QUEUE *r = new QUEUE(4);
+    *r = *t;
+    
+    PRINT("队列r赋值后的内容为：");
+    r->print();
     PRINT("检查一下队列t的内容有没有变：");
     t->print(); 
     
     NEWSECTION;
-    
-    // TODO: 在这里崩溃 
+     
     PRINT("===== 销毁队列 =====");
     PRINT("销毁队列s");
     delete s;
