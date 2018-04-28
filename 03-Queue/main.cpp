@@ -129,6 +129,8 @@ int main()
     delete s;
     PRINT("销毁队列t");
     delete t; 
+    PRINT("销毁队列r");
+    delete r; 
     
     
     return 0;
